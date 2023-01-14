@@ -1,0 +1,9 @@
+.ui.basic.button, .ui.basic.buttons .button {
+    background: rgb(216, 35, 35) none!important;
+    color: white !important;
+    &:hover{
+        background-color: rgb(216, 35, 35) !important;
+        color: white !important;
+    }    
+}
+

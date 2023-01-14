@@ -1,0 +1,47 @@
+@import "~/src/scss/index.scss";
+
+.post{
+    margin-top: 50px;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    .image-post{
+        text-align: center;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        max-width: 400px;
+        border-radius: 200px !important;
+
+
+        >.ui.fluid.image{
+            border-radius: 10px !important;
+            max-width: 300px !important;
+        }
+
+    }
+
+    .title{
+
+        color: $text-ligth;
+        text-align: center;
+        margin-bottom: 6;
+        border-bottom: 1px solid $border-grey;
+        width: 100%;
+    }
+
+    .content{
+        color: $text-ligth;
+        text-align: center;
+        border-top: 1px solid $border-grey;
+        margin-top: 10px;
+        width: 100%;
+        pre{
+            background-color:#0000 ;
+            overflow-x: scroll;
+            padding: 20px;
+        }
+    }
+}

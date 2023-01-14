@@ -1,0 +1,25 @@
+@import "~/src/scss/index.scss";
+
+.footer-newsletter {
+  width: 33.33%;
+  padding-left: 60px;
+
+  > h4 {
+    color: $text-ligth;
+    margin-bottom: 20px;
+  }
+
+  .success {
+    color: $success;
+    text-align: center;
+    font-size: 12px;
+  }
+  
+  .failed {
+    color: $info;
+    text-align: center;
+    font-size: 12px;
+  }
+}
+
+   

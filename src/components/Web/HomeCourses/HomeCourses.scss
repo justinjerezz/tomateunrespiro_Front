@@ -1,0 +1,33 @@
+@import "~/src/scss/index.scss";
+
+.home-courses {
+  > h2 {
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: $text-ligth;
+    margin: 50px 0 30px 0;
+  }
+
+  &__all-courses {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+    justify-content: space-around !important;
+    .list-post-item {
+      display: flex !important;
+      flex-direction: column !important;
+      max-width: 300px !important;
+    }
+  }
+
+  &__more {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0px;
+
+    > .ui.button {
+      width: 200px;
+    }
+  }
+}
