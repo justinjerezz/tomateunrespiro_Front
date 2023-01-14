@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useEffect, useCallback, useState } from "react";
 import { Form, Image } from "semantic-ui-react";
 import { useFormik } from "formik";
 import { useDropzone } from "react-dropzone";
@@ -14,6 +14,19 @@ const userController = new User();
 export function UserForm(props) {
   const { close, onReload, user } = props;
   const { accessToken } = useAuth();
+  const [infoUser, setInfoUser] = useState("");
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const infoUserResponse = await userController.getMe(accessToken);
+        setInfoUser(infoUserResponse);
+      } catch (error) {
+        console.error(error);
+      }
+    })();
+  }, []);
+
   const formik = useFormik({
     initialValues: initialValues(user),
     validationSchema: validationSchema(user),
@@ -25,6 +38,7 @@ export function UserForm(props) {
         } else {
           await userController.updateUser(accessToken, user._id, formValue);
         }
+
         onReload();
         close();
       } catch (error) {
@@ -32,6 +46,8 @@ export function UserForm(props) {
       }
     },
   });
+
+
 
   const onDrop = useCallback((acceptedFiles) => {
     const file = acceptedFiles[0];
@@ -86,18 +102,18 @@ export function UserForm(props) {
           value={formik.values.email}
           error={formik.errors.email}
         ></Form.Input>
-        {user.role === "admin" && (
-          <>
-            <Form.Dropdown
-              placeholder="Seleccióna un rol"
-              options={roleOptions}
-              selection
-              onChange={(_, data) => formik.setFieldValue("role", data.value)}
-              value={formik.values.role}
-              error={formik.errors.role}
-            ></Form.Dropdown>
-          </>
+
+        {infoUser.role === "admin" && (
+          <Form.Dropdown
+            placeholder="Seleccióna un rol"
+            options={roleOptions}
+            selection
+            onChange={(_, data) => formik.setFieldValue("role", data.value)}
+            value={formik.values.role}
+            error={formik.errors.role}
+          ></Form.Dropdown>
         )}
+        
       </Form.Group>
       <Form.Input
         type="password"
