@@ -18,13 +18,19 @@
       display: flex !important;
       flex-direction: column !important;
       width: 300px !important;
+
+      margin-bottom: 40px;
+
+      >h3{
+        margin: 0 !important;
+      }
     }
   }
 
   &__more {
     display: flex;
     justify-content: center;
-    padding: 20px 0px;
+    padding: 30px 0px;
 
     > .ui.button {
       width: 200px;

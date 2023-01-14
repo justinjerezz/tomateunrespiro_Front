@@ -25,7 +25,8 @@ export function Post() {
   if (!post) return <Loader active inline="centered"></Loader>;
   return (
     <Container className="post">
-      <h1 className="title">{post.title}</h1>
+      <h1 className="title">{post.title} <h3 className="title2">{post.city}</h3></h1>
+      
       <div className="image-post">
         <Image src={`${ENV.BASE_PATH}/${post.miniature}`} fluid />
       </div>

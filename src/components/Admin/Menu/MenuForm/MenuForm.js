@@ -90,16 +90,6 @@ export function MenuForm(props) {
 
 const options = [
   {
-    key: "https://",
-    text: "https://",
-    value: "https://",
-  },
-  {
-    key: "http://",
-    text: "http://",
-    value: "http://",
-  },
-  {
     key: "/",
     text: "/",
     value: "/",

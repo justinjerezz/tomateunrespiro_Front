@@ -4,6 +4,7 @@ import { WebRouter, AdminRouter } from "./router";
 import { AuthProvider } from "./contexts";
 
 export default function App() {
+  
   return (
     <AuthProvider>
       <HashRouter>

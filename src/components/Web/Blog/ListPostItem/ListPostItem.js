@@ -13,6 +13,7 @@ export function ListPostItem(props) {
     <Link className="list-post-item" to={`/blog/${post.path}`}>
       <Image src={`${ENV.BASE_PATH}/${post.miniature}`} fluid />
       <h2>{post.title}</h2>
+      <h3>{post.city}</h3>
       <span>
         {DateTime.fromISO(date.toISOString())
           .setLocale("es")

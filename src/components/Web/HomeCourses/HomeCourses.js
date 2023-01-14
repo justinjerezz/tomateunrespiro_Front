@@ -15,7 +15,7 @@ export function HomeCourses() {
     (async () => {
       try {
         const response = await postController.getPostsPrincipal({
-          limit: 4,
+          limit: 6,
         });
         setPosts(response.docs);
       } catch (error) {
@@ -32,6 +32,7 @@ export function HomeCourses() {
             <Link key={post._id} className="list-post-item" to={`/blog/${post.path}`}>
             <Image src={`${ENV.BASE_PATH}/${post.miniature}`} fluid />
             <h2>{post.title}</h2>
+            <h3>{post.city}</h3>
 
           </Link>
         ))}

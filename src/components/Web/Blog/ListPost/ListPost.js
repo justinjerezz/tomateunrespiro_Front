@@ -20,7 +20,7 @@ export function ListPost() {
       try {
         const response = await postController.getPostsPrincipal({
           page:page,
-          limit:5
+          limit:6
         });
         setPosts(response.docs);
         setPagination({
